@@ -44,12 +44,12 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/users/:userId",
-                  "host": ["{{baseUrl}}"],
+                  "raw": "http://0.0.0.0:3000/users/:userId",
+                  "host": ["http://0.0.0.0:3000"],
                   "path": ["users", ":userId"],
                   "variable": [
                     {
-                      "key": "propertyId",
+                      "key": "userId",
                       "value": "d4567890-12ef-0123-4567-89abcdef0123",
                       "description": "(Required) "
                     }
@@ -64,8 +64,8 @@
                     "method": "GET",
                     "header": [],
                     "url": {
-                      "raw": "{{baseUrl}}/users/:userId",
-                      "host": ["{{baseUrl}}"],
+                      "raw": "http://0.0.0.0:3000/users/:userId",
+                      "host": ["http://0.0.0.0:3000"],
                       "path": ["users", ":userId"],
                       "variable": [
                         {
@@ -130,8 +130,8 @@
                   }
                 },
                 "url": {
-                  "raw": "{{baseUrl}}/users/:userId",
-                  "host": ["{{baseUrl}}"],
+                  "raw": "http://0.0.0.0:3000/users/:userId",
+                  "host": ["http://0.0.0.0:3000"],
                   "path": ["users", ":userId"],
                   "variable": [
                     {
@@ -165,8 +165,8 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/users/:userId",
-                      "host": ["{{baseUrl}}"],
+                      "raw": "http://0.0.0.0:3000/users/:userId",
+                      "host": ["http://0.0.0.0:3000"],
                       "path": ["users", ":userId"],
                       "variable": [
                         {
@@ -222,8 +222,8 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/users/:userId",
-                  "host": ["{{baseUrl}}"],
+                  "raw": "http://0.0.0.0:3000/users/:userId",
+                  "host": ["http://0.0.0.0:3000"],
                   "path": ["users", ":userId"],
                   "variable": [
                     {
@@ -248,8 +248,8 @@
                       }
                     ],
                     "url": {
-                      "raw": "{{baseUrl}}/users/:userId",
-                      "host": ["{{baseUrl}}"],
+                      "raw": "http://0.0.0.0:3000/users/:userId",
+                      "host": ["http://0.0.0.0:3000"],
                       "path": ["users", ":userId"],
                       "variable": [
                         {
@@ -317,8 +317,8 @@
               }
             },
             "url": {
-              "raw": "{{baseUrl}}/users",
-              "host": ["{{baseUrl}}"],
+              "raw": "http://0.0.0.0:3000/users",
+              "host": ["http://0.0.0.0:3000"],
               "path": ["users"]
             }
           },
@@ -345,8 +345,8 @@
                   }
                 },
                 "url": {
-                  "raw": "{{baseUrl}}/users",
-                  "host": ["{{baseUrl}}"],
+                  "raw": "http://0.0.0.0:3000/users",
+                  "host": ["http://0.0.0.0:3000"],
                   "path": ["users"]
                 }
               },
@@ -403,8 +403,8 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/hosts/:hostId",
-                  "host": ["{{baseUrl}}"],
+                  "raw": "http://0.0.0.0:3000/hosts/:hostId",
+                  "host": ["http://0.0.0.0:3000"],
                   "path": ["hosts", ":hostId"],
                   "variable": [
                     {
@@ -423,8 +423,8 @@
                     "method": "GET",
                     "header": [],
                     "url": {
-                      "raw": "{{baseUrl}}/hosts/:hostId",
-                      "host": ["{{baseUrl}}"],
+                      "raw": "http://0.0.0.0:3000/hosts/:hostId",
+                      "host": ["http://0.0.0.0:3000"],
                       "path": ["hosts", ":hostId"],
                       "variable": [
                         {
@@ -489,8 +489,8 @@
                   }
                 },
                 "url": {
-                  "raw": "{{baseUrl}}/hosts/:hostId",
-                  "host": ["{{baseUrl}}"],
+                  "raw": "http://0.0.0.0:3000/hosts/:hostId",
+                  "host": ["http://0.0.0.0:3000"],
                   "path": ["hosts", ":hostId"],
                   "variable": [
                     {
@@ -524,8 +524,8 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/hosts/:hostId",
-                      "host": ["{{baseUrl}}"],
+                      "raw": "http://0.0.0.0:3000/hosts/:hostId",
+                      "host": ["http://0.0.0.0:3000"],
                       "path": ["hosts", ":hostId"],
                       "variable": [
                         {
@@ -581,8 +581,8 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/hosts/:hostId",
-                  "host": ["{{baseUrl}}"],
+                  "raw": "http://0.0.0.0:3000/hosts/:hostId",
+                  "host": ["http://0.0.0.0:3000"],
                   "path": ["hosts", ":hostId"],
                   "variable": [
                     {
@@ -607,8 +607,8 @@
                       }
                     ],
                     "url": {
-                      "raw": "{{baseUrl}}/hosts/:hostId",
-                      "host": ["{{baseUrl}}"],
+                      "raw": "http://0.0.0.0:3000/hosts/:hostId",
+                      "host": ["http://0.0.0.0:3000"],
                       "path": ["hosts", ":hostId"],
                       "variable": [
                         {
@@ -676,8 +676,8 @@
               }
             },
             "url": {
-              "raw": "{{baseUrl}}/hosts",
-              "host": ["{{baseUrl}}"],
+              "raw": "http://0.0.0.0:3000/hosts",
+              "host": ["http://0.0.0.0:3000"],
               "path": ["hosts"]
             }
           },
@@ -704,8 +704,8 @@
                   }
                 },
                 "url": {
-                  "raw": "{{baseUrl}}/hosts",
-                  "host": ["{{baseUrl}}"],
+                  "raw": "http://0.0.0.0:3000/hosts",
+                  "host": ["http://0.0.0.0:3000"],
                   "path": ["hosts"]
                 }
               },
@@ -762,8 +762,8 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/properties/:propertyId",
-                  "host": ["{{baseUrl}}"],
+                  "raw": "http://0.0.0.0:3000/properties/:propertyId",
+                  "host": ["http://0.0.0.0:3000"],
                   "path": ["properties", ":propertyId"],
                   "variable": [
                     {
@@ -782,8 +782,8 @@
                     "method": "GET",
                     "header": [],
                     "url": {
-                      "raw": "{{baseUrl}}/properties/:propertyId",
-                      "host": ["{{baseUrl}}"],
+                      "raw": "http://0.0.0.0:3000/properties/:propertyId",
+                      "host": ["http://0.0.0.0:3000"],
                       "path": ["properties", ":propertyId"],
                       "variable": [
                         {
@@ -848,8 +848,8 @@
                   }
                 },
                 "url": {
-                  "raw": "{{baseUrl}}/properties/:propertyId",
-                  "host": ["{{baseUrl}}"],
+                  "raw": "http://0.0.0.0:3000/properties/:propertyId",
+                  "host": ["http://0.0.0.0:3000"],
                   "path": ["properties", ":propertyId"],
                   "variable": [
                     {
@@ -883,8 +883,8 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/properties/:propertyId",
-                      "host": ["{{baseUrl}}"],
+                      "raw": "http://0.0.0.0:3000/properties/:propertyId",
+                      "host": ["http://0.0.0.0:3000"],
                       "path": ["properties", ":propertyId"],
                       "variable": [
                         {
@@ -940,8 +940,8 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/properties/:propertyId",
-                  "host": ["{{baseUrl}}"],
+                  "raw": "http://0.0.0.0:3000/properties/:propertyId",
+                  "host": ["http://0.0.0.0:3000"],
                   "path": ["properties", ":propertyId"],
                   "variable": [
                     {
@@ -966,8 +966,8 @@
                       }
                     ],
                     "url": {
-                      "raw": "{{baseUrl}}/properties/:propertyId",
-                      "host": ["{{baseUrl}}"],
+                      "raw": "http://0.0.0.0:3000/properties/:propertyId",
+                      "host": ["http://0.0.0.0:3000"],
                       "path": ["properties", ":propertyId"],
                       "variable": [
                         {
@@ -1035,8 +1035,8 @@
               }
             },
             "url": {
-              "raw": "{{baseUrl}}/properties",
-              "host": ["{{baseUrl}}"],
+              "raw": "http://0.0.0.0:3000/properties",
+              "host": ["http://0.0.0.0:3000"],
               "path": ["properties"]
             }
           },
@@ -1063,8 +1063,8 @@
                   }
                 },
                 "url": {
-                  "raw": "{{baseUrl}}/properties",
-                  "host": ["{{baseUrl}}"],
+                  "raw": "http://0.0.0.0:3000/properties",
+                  "host": ["http://0.0.0.0:3000"],
                   "path": ["properties"]
                 }
               },
@@ -1121,8 +1121,8 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/bookings/:bookingId",
-                  "host": ["{{baseUrl}}"],
+                  "raw": "http://0.0.0.0:3000/bookings/:bookingId",
+                  "host": ["http://0.0.0.0:3000"],
                   "path": ["bookings", ":bookingId"],
                   "variable": [
                     {
@@ -1141,8 +1141,8 @@
                     "method": "GET",
                     "header": [],
                     "url": {
-                      "raw": "{{baseUrl}}/bookings/:bookingId",
-                      "host": ["{{baseUrl}}"],
+                      "raw": "http://0.0.0.0:3000/bookings/:bookingId",
+                      "host": ["http://0.0.0.0:3000"],
                       "path": ["bookings", ":bookingId"],
                       "variable": [
                         {
@@ -1207,8 +1207,8 @@
                   }
                 },
                 "url": {
-                  "raw": "{{baseUrl}}/bookings/:bookingId",
-                  "host": ["{{baseUrl}}"],
+                  "raw": "http://0.0.0.0:3000/bookings/:bookingId",
+                  "host": ["http://0.0.0.0:3000"],
                   "path": ["bookings", ":bookingId"],
                   "variable": [
                     {
@@ -1242,8 +1242,8 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/bookings/:bookingId",
-                      "host": ["{{baseUrl}}"],
+                      "raw": "http://0.0.0.0:3000/bookings/:bookingId",
+                      "host": ["http://0.0.0.0:3000"],
                       "path": ["bookings", ":bookingId"],
                       "variable": [
                         {
@@ -1299,8 +1299,8 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/bookings/:bookingId",
-                  "host": ["{{baseUrl}}"],
+                  "raw": "http://0.0.0.0:3000/bookings/:bookingId",
+                  "host": ["http://0.0.0.0:3000"],
                   "path": ["bookings", ":bookingId"],
                   "variable": [
                     {
@@ -1325,8 +1325,8 @@
                       }
                     ],
                     "url": {
-                      "raw": "{{baseUrl}}/bookings/:bookingId",
-                      "host": ["{{baseUrl}}"],
+                      "raw": "http://0.0.0.0:3000/bookings/:bookingId",
+                      "host": ["http://0.0.0.0:3000"],
                       "path": ["bookings", ":bookingId"],
                       "variable": [
                         {
@@ -1394,8 +1394,8 @@
               }
             },
             "url": {
-              "raw": "{{baseUrl}}/bookings",
-              "host": ["{{baseUrl}}"],
+              "raw": "http://0.0.0.0:3000/bookings",
+              "host": ["http://0.0.0.0:3000"],
               "path": ["bookings"]
             }
           },
@@ -1422,8 +1422,8 @@
                   }
                 },
                 "url": {
-                  "raw": "{{baseUrl}}/bookings",
-                  "host": ["{{baseUrl}}"],
+                  "raw": "http://0.0.0.0:3000/bookings",
+                  "host": ["http://0.0.0.0:3000"],
                   "path": ["bookings"]
                 }
               },
@@ -1480,8 +1480,8 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/reviews/:reviewId",
-                  "host": ["{{baseUrl}}"],
+                  "raw": "http://0.0.0.0:3000/reviews/:reviewId",
+                  "host": ["http://0.0.0.0:3000"],
                   "path": ["reviews", ":reviewId"],
                   "variable": [
                     {
@@ -1500,8 +1500,8 @@
                     "method": "GET",
                     "header": [],
                     "url": {
-                      "raw": "{{baseUrl}}/reviews/:reviewId",
-                      "host": ["{{baseUrl}}"],
+                      "raw": "http://0.0.0.0:3000/reviews/:reviewId",
+                      "host": ["http://0.0.0.0:3000"],
                       "path": ["reviews", ":reviewId"],
                       "variable": [
                         {
@@ -1566,8 +1566,8 @@
                   }
                 },
                 "url": {
-                  "raw": "{{baseUrl}}/reviews/:reviewId",
-                  "host": ["{{baseUrl}}"],
+                  "raw": "http://0.0.0.0:3000/reviews/:reviewId",
+                  "host": ["http://0.0.0.0:3000"],
                   "path": ["reviews", ":reviewId"],
                   "variable": [
                     {
@@ -1601,8 +1601,8 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/reviews/:reviewId",
-                      "host": ["{{baseUrl}}"],
+                      "raw": "http://0.0.0.0:3000/reviews/:reviewId",
+                      "host": ["http://0.0.0.0:3000"],
                       "path": ["reviews", ":reviewId"],
                       "variable": [
                         {
@@ -1658,8 +1658,8 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/reviews/:reviewId",
-                  "host": ["{{baseUrl}}"],
+                  "raw": "http://0.0.0.0:3000/reviews/:reviewId",
+                  "host": ["http://0.0.0.0:3000"],
                   "path": ["reviews", ":reviewId"],
                   "variable": [
                     {
@@ -1684,8 +1684,8 @@
                       }
                     ],
                     "url": {
-                      "raw": "{{baseUrl}}/reviews/:reviewId",
-                      "host": ["{{baseUrl}}"],
+                      "raw": "http://0.0.0.0:3000/reviews/:reviewId",
+                      "host": ["http://0.0.0.0:3000"],
                       "path": ["reviews", ":reviewId"],
                       "variable": [
                         {
@@ -1753,8 +1753,8 @@
               }
             },
             "url": {
-              "raw": "{{baseUrl}}/reviews",
-              "host": ["{{baseUrl}}"],
+              "raw": "http://0.0.0.0:3000/reviews",
+              "host": ["http://0.0.0.0:3000"],
               "path": ["reviews"]
             }
           },
@@ -1781,8 +1781,8 @@
                   }
                 },
                 "url": {
-                  "raw": "{{baseUrl}}/reviews",
-                  "host": ["{{baseUrl}}"],
+                  "raw": "http://0.0.0.0:3000/reviews",
+                  "host": ["http://0.0.0.0:3000"],
                   "path": ["reviews"]
                 }
               },
@@ -1846,9 +1846,11 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/login",
-          "host": ["{{baseUrl}}"],
-          "path": ["login"]
+          "raw": "http://0.0.0.0:3000/api/auth/login",
+          "protocol": "http",
+          "host": ["0.0.0.0"],
+          "port": "3000",
+          "path": ["api", "auth", "login"]
         }
       },
       "response": [
@@ -1868,8 +1870,10 @@
               }
             },
             "url": {
-              "raw": "{{baseUrl}}/login",
-              "host": ["{{baseUrl}}"],
+              "raw": "http://0.0.0.0:3000/login",
+              "protocol": "http",
+              "host": ["0.0.0.0"],
+              "port": "3000",
               "path": ["login"]
             }
           },
