@@ -1,5 +1,6 @@
 // routes/bookingRoutes.js
 import express from "express";
+import asyncHandler from "express-async-handler";
 import {
   getAllBookings,
   getBookingById,
@@ -11,12 +12,11 @@ import { authenticateToken } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-router.get("/", getAllBookings); // GET /api/bookings (openbaar)
-router.get("/:id", getBookingById); // GET /api/bookings/:id (openbaar)
+router.get("/", asyncHandler(getAllBookings)); // Openbaar
+router.get("/:id", asyncHandler(getBookingById)); // Openbaar
 
-// Beveiligde routes
-router.post("/", authenticateToken, createBooking); // POST /api/bookings
-router.put("/:id", authenticateToken, updateBooking); // PUT /api/bookings/:id
-router.delete("/:id", authenticateToken, deleteBooking); // DELETE /api/bookings/:id
+router.post("/", authenticateToken, asyncHandler(createBooking));
+router.put("/:id", authenticateToken, asyncHandler(updateBooking));
+router.delete("/:id", authenticateToken, asyncHandler(deleteBooking));
 
 export default router;

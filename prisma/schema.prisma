@@ -12,7 +12,7 @@ model User {
   username       String    @unique
   password       String
   name           String
-  email          String
+  email          String    @unique
   phoneNumber    String
   profilePicture String?
 
@@ -43,7 +43,7 @@ model Property {
   bathrooms      Int
   maxGuests      Int
   rating         Float?
-
+  
   hostId         String
   host           Host       @relation(fields: [hostId], references: [id], onDelete: Cascade)
 

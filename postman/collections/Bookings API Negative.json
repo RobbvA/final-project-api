@@ -116,7 +116,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "{{bearerToken}}",
+                    "value": "Bearer {{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -151,7 +151,7 @@
                     "header": [
                       {
                         "key": "Authorization",
-                        "value": "{{bearerToken}}",
+                        "value": "Bearer {{bearerToken}}",
                         "type": "text"
                       }
                     ],
@@ -217,7 +217,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "{{bearerToken}}",
+                    "value": "Bearer {{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -243,7 +243,7 @@
                     "header": [
                       {
                         "key": "Authorization",
-                        "value": "{{bearerToken}}",
+                        "value": "Bearer {{bearerToken}}",
                         "type": "text"
                       }
                     ],
@@ -303,7 +303,7 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "{{bearerToken}}",
+                "value": "Bearer {{bearerToken}}",
                 "type": "text"
               }
             ],
@@ -331,7 +331,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "{{bearerToken}}",
+                    "value": "Bearer {{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -475,7 +475,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "{{bearerToken}}",
+                    "value": "Bearer {{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -510,7 +510,7 @@
                     "header": [
                       {
                         "key": "Authorization",
-                        "value": "{{bearerToken}}",
+                        "value": "Bearer {{bearerToken}}",
                         "type": "text"
                       }
                     ],
@@ -576,7 +576,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "{{bearerToken}}",
+                    "value": "Bearer {{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -602,7 +602,7 @@
                     "header": [
                       {
                         "key": "Authorization",
-                        "value": "{{bearerToken}}",
+                        "value": "Bearer {{bearerToken}}",
                         "type": "text"
                       }
                     ],
@@ -662,7 +662,7 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "{{bearerToken}}",
+                "value": "Bearer {{bearerToken}}",
                 "type": "text"
               }
             ],
@@ -690,7 +690,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "{{bearerToken}}",
+                    "value": "Bearer {{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -834,7 +834,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "{{bearerToken}}",
+                    "value": "Bearer {{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -869,7 +869,7 @@
                     "header": [
                       {
                         "key": "Authorization",
-                        "value": "{{bearerToken}}",
+                        "value": "Bearer {{bearerToken}}",
                         "type": "text"
                       }
                     ],
@@ -935,7 +935,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "{{bearerToken}}",
+                    "value": "Bearer {{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -961,7 +961,7 @@
                     "header": [
                       {
                         "key": "Authorization",
-                        "value": "{{bearerToken}}",
+                        "value": "Bearer {{bearerToken}}",
                         "type": "text"
                       }
                     ],
@@ -1021,7 +1021,7 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "{{bearerToken}}",
+                "value": "Bearer {{bearerToken}}",
                 "type": "text"
               }
             ],
@@ -1049,7 +1049,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "{{bearerToken}}",
+                    "value": "Bearer {{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -1193,7 +1193,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "{{bearerToken}}",
+                    "value": "Bearer {{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -1228,7 +1228,7 @@
                     "header": [
                       {
                         "key": "Authorization",
-                        "value": "{{bearerToken}}",
+                        "value": "Bearer {{bearerToken}}",
                         "type": "text"
                       }
                     ],
@@ -1294,7 +1294,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "{{bearerToken}}",
+                    "value": "Bearer {{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -1320,7 +1320,7 @@
                     "header": [
                       {
                         "key": "Authorization",
-                        "value": "{{bearerToken}}",
+                        "value": "Bearer {{bearerToken}}",
                         "type": "text"
                       }
                     ],
@@ -1380,7 +1380,7 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "{{bearerToken}}",
+                "value": "Bearer {{bearerToken}}",
                 "type": "text"
               }
             ],
@@ -1408,7 +1408,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "{{bearerToken}}",
+                    "value": "Bearer {{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -1552,7 +1552,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "{{bearerToken}}",
+                    "value": "Bearer {{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -1587,7 +1587,7 @@
                     "header": [
                       {
                         "key": "Authorization",
-                        "value": "{{bearerToken}}",
+                        "value": "Bearer {{bearerToken}}",
                         "type": "text"
                       }
                     ],
@@ -1653,7 +1653,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "{{bearerToken}}",
+                    "value": "Bearer {{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -1679,7 +1679,7 @@
                     "header": [
                       {
                         "key": "Authorization",
-                        "value": "{{bearerToken}}",
+                        "value": "Bearer {{bearerToken}}",
                         "type": "text"
                       }
                     ],
@@ -1739,7 +1739,7 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "{{bearerToken}}",
+                "value": "Bearer {{bearerToken}}",
                 "type": "text"
               }
             ],
@@ -1767,7 +1767,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "{{bearerToken}}",
+                    "value": "Bearer {{bearerToken}}",
                     "type": "text"
                   }
                 ],

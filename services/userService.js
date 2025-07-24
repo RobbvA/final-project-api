@@ -4,23 +4,15 @@ import bcrypt from "bcrypt";
 
 const prisma = new PrismaClient();
 
-// Haal alle users op, met optionele query filters (username, email of name), zonder wachtwoord
+// ✅ Alle users ophalen (optioneel gefilterd)
 export async function getAllUsers(req, res) {
   const { username, email, name } = req.query;
 
   try {
-    let where = {};
-
-    if (username) {
-      where.username = username;
-    } else if (email) {
-      where.email = email;
-    } else if (name) {
-      where.name = {
-        contains: name, // zoekt ook op gedeeltelijke naam
-        // mode: "insensitive" // SQLite ondersteunt dit niet, dus laten we het weg
-      };
-    }
+    const where = {};
+    if (username) where.username = username;
+    else if (email) where.email = email;
+    else if (name) where.name = { contains: name };
 
     const users = await prisma.user.findMany({
       where,
@@ -36,13 +28,15 @@ export async function getAllUsers(req, res) {
 
     res.json(users);
   } catch (error) {
+    console.error("❌ getAllUsers error:", error);
     res.status(500).json({ error: "Failed to fetch users" });
   }
 }
 
-// Haal 1 user op met id, zonder wachtwoord
+// ✅ Eén user ophalen
 export async function getUserById(req, res) {
   const id = req.params.id;
+
   try {
     const user = await prisma.user.findUnique({
       where: { id },
@@ -62,19 +56,36 @@ export async function getUserById(req, res) {
 
     res.json(user);
   } catch (error) {
+    console.error("❌ getUserById error:", error);
     res.status(500).json({ error: "Failed to fetch user" });
   }
 }
 
-// Nieuwe user aanmaken (wachtwoord wordt gehashed)
+// ✅ Nieuwe user aanmaken
 export async function createUser(req, res) {
   const { username, password, name, email, phoneNumber, profilePicture } =
     req.body;
 
   try {
-    // Hash het wachtwoord
+    // Validatie
+    if (!username || !password || !name || !email) {
+      return res
+        .status(400)
+        .json({ error: "Username, password, name en email zijn verplicht" });
+    }
+
+    // Bestaat deze gebruiker al?
+    const existingUser = await prisma.user.findUnique({ where: { email } });
+    if (existingUser) {
+      return res
+        .status(409)
+        .json({ error: "User with this email already exists" });
+    }
+
+    // Hash wachtwoord
     const hashedPassword = await bcrypt.hash(password, 10);
 
+    // Nieuwe user aanmaken
     const user = await prisma.user.create({
       data: {
         username,
@@ -86,23 +97,25 @@ export async function createUser(req, res) {
       },
     });
 
-    // Return zonder password
+    // Verwijder wachtwoord uit response
     const { password: _, ...userWithoutPassword } = user;
     res.status(201).json(userWithoutPassword);
   } catch (error) {
-    res.status(500).json({ error: "Failed to create user" });
+    console.error("❌ createUser error:", error);
+    res
+      .status(500)
+      .json({ error: "Failed to create user", details: error.message });
   }
 }
 
-// User updaten
+// ✅ User bijwerken
 export async function updateUser(req, res) {
   const id = req.params.id;
   const updateData = req.body;
 
   try {
-    // Wachtwoord updaten niet via deze route
     if ("password" in updateData) {
-      delete updateData.password;
+      delete updateData.password; // wachtwoord niet via deze route
     }
 
     const updatedUser = await prisma.user.update({
@@ -120,11 +133,14 @@ export async function updateUser(req, res) {
 
     res.json(updatedUser);
   } catch (error) {
-    res.status(500).json({ error: "Failed to update user" });
+    console.error("❌ updateUser error:", error);
+    res
+      .status(500)
+      .json({ error: "Failed to update user", details: error.message });
   }
 }
 
-// User verwijderen
+// ✅ User verwijderen
 export async function deleteUser(req, res) {
   const id = req.params.id;
 
@@ -136,7 +152,9 @@ export async function deleteUser(req, res) {
 
     res.json({ message: "User deleted" });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Failed to delete user" });
+    console.error("❌ deleteUser error:", error);
+    res
+      .status(500)
+      .json({ error: "Failed to delete user", details: error.message });
   }
 }

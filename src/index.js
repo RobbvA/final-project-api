@@ -1,5 +1,3 @@
-// src/index.js
-
 import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
@@ -43,7 +41,7 @@ app.get("/debug-sentry", (req, res) => {
   throw new Error("My first Sentry error!");
 });
 
-// API routes
+// API routes (zonder auth middleware)
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/hosts", hostRoutes);
