@@ -74,15 +74,19 @@ export async function createUser(req, res) {
         .json({ error: "Username, password, name en email zijn verplicht" });
     }
 
-    // Bestaat deze gebruiker al?
-    const existingUser = await prisma.user.findUnique({ where: { email } });
-    if (existingUser) {
-      return res
-        .status(409)
-        .json({ error: "User with this email already exists" });
+    // Extra typecheck (optioneel)
+    if (
+      typeof username !== "string" ||
+      typeof password !== "string" ||
+      typeof name !== "string" ||
+      typeof email !== "string"
+    ) {
+      return res.status(400).json({
+        error: "Velden moeten strings zijn (username, password, name, email)",
+      });
     }
 
-    // Hash wachtwoord
+    // Wachtwoord hashen
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // Nieuwe user aanmaken
@@ -97,11 +101,18 @@ export async function createUser(req, res) {
       },
     });
 
-    // Verwijder wachtwoord uit response
+    // Wachtwoord verwijderen uit response
     const { password: _, ...userWithoutPassword } = user;
     res.status(201).json(userWithoutPassword);
   } catch (error) {
     console.error("❌ createUser error:", error);
+
+    // Check of het een unique constraint violation is op username
+    if (error.code === "P2002" && error.meta?.target?.includes("username")) {
+      return res.status(409).json({ error: "Username bestaat al" });
+    }
+
+    // Andere errors gewoon doorgeven
     res
       .status(500)
       .json({ error: "Failed to create user", details: error.message });
@@ -111,11 +122,12 @@ export async function createUser(req, res) {
 // ✅ User bijwerken
 export async function updateUser(req, res) {
   const id = req.params.id;
-  const updateData = req.body;
+  const updateData = { ...req.body };
 
   try {
+    // Voorkom wachtwoord update via deze route
     if ("password" in updateData) {
-      delete updateData.password; // wachtwoord niet via deze route
+      delete updateData.password;
     }
 
     const updatedUser = await prisma.user.update({
@@ -134,6 +146,11 @@ export async function updateUser(req, res) {
     res.json(updatedUser);
   } catch (error) {
     console.error("❌ updateUser error:", error);
+
+    if (error.code === "P2025") {
+      return res.status(404).json({ error: "User not found" });
+    }
+
     res
       .status(500)
       .json({ error: "Failed to update user", details: error.message });
@@ -145,6 +162,7 @@ export async function deleteUser(req, res) {
   const id = req.params.id;
 
   try {
+    // Eerst gerelateerde records verwijderen
     await prisma.booking.deleteMany({ where: { userId: id } });
     await prisma.review.deleteMany({ where: { userId: id } });
 
@@ -153,6 +171,11 @@ export async function deleteUser(req, res) {
     res.json({ message: "User deleted" });
   } catch (error) {
     console.error("❌ deleteUser error:", error);
+
+    if (error.code === "P2025") {
+      return res.status(404).json({ error: "User not found" });
+    }
+
     res
       .status(500)
       .json({ error: "Failed to delete user", details: error.message });

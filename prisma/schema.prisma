@@ -43,13 +43,14 @@ model Property {
   bathrooms      Int
   maxGuests      Int
   rating         Float?
-  
+
   hostId         String
   host           Host       @relation(fields: [hostId], references: [id], onDelete: Cascade)
 
   bookings       Booking[]
   reviews        Review[]
 }
+
 
 model Booking {
   id             String    @id @default(uuid())

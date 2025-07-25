@@ -35,41 +35,46 @@ async function main() {
   const bookings = bookingsData.bookings;
   const reviews = reviewsData.reviews;
 
-  // Users - hash wachtwoorden voordat je ze toevoegt
+  // Users - hash wachtwoorden en gebruik upsert
   for (const user of users) {
     try {
-      if ("password2" in user) {
-        delete user.password2;
-      }
+      if ("password2" in user) delete user.password2;
+      if (!user.password) throw new Error("User missing password");
 
-      if (!user.password) {
-        throw new Error("User missing password");
-      }
+      const hashedPassword = await bcrypt.hash(user.password, 10);
+      user.password = hashedPassword;
 
-      user.password = await bcrypt.hash(user.password, 10);
-
-      console.log("Creating user:", user.username);
-      await prisma.user.create({ data: user });
+      console.log("Upserting user:", user.username);
+      await prisma.user.upsert({
+        where: { email: user.email },
+        update: {},
+        create: user,
+      });
     } catch (err) {
-      console.error(`Error creating user ${user.username}:`, err.message);
+      console.error(`Error upserting user ${user.username}:`, err.message);
     }
   }
 
-  // Hosts
+  // Hosts - gebruik upsert op basis van id
   for (const host of hosts) {
     try {
       if ("aboutMe" in host) {
         host.about = host.aboutMe;
         delete host.aboutMe;
       }
-      console.log("Creating host:", host.name || host.id);
-      await prisma.host.create({ data: host });
+
+      console.log("Upserting host:", host.name || host.id);
+      await prisma.host.upsert({
+        where: { id: host.id },
+        update: {},
+        create: host,
+      });
     } catch (err) {
-      console.error("Error creating host:", err.message);
+      console.error("Error upserting host:", err.message);
     }
   }
 
-  // Properties
+  // Properties - upsert per id
   for (const property of properties) {
     try {
       const fixedProperty = {
@@ -83,47 +88,69 @@ async function main() {
       delete fixedProperty.bathRoomCount;
       delete fixedProperty.maxGuestCount;
 
-      console.log("Creating property:", fixedProperty.title);
-      await prisma.property.create({ data: fixedProperty });
+      console.log("Upserting property:", fixedProperty.title);
+      await prisma.property.upsert({
+        where: { id: fixedProperty.id },
+        update: {},
+        create: fixedProperty,
+      });
     } catch (err) {
-      console.error("Error creating property:", err.message);
+      console.error("Error upserting property:", err.message);
     }
   }
 
-  // Bookings
+  // Bookings – alleen maken als ID niet bestaat
   for (const booking of bookings) {
     try {
       const fixedBooking = {
         ...booking,
-        checkIn: booking.checkinDate ? new Date(booking.checkinDate) : null,
-        checkOut: booking.checkoutDate ? new Date(booking.checkoutDate) : null,
+        checkIn: booking.checkinDate
+          ? new Date(booking.checkinDate)
+          : new Date(booking.checkIn),
+        checkOut: booking.checkoutDate
+          ? new Date(booking.checkoutDate)
+          : new Date(booking.checkOut),
       };
 
       delete fixedBooking.checkinDate;
       delete fixedBooking.checkoutDate;
 
-      // Zorg dat verplichte velden bestaan, anders skip
       if (!fixedBooking.userId || !fixedBooking.propertyId) {
         throw new Error("Booking missing userId or propertyId");
       }
 
-      console.log("Creating booking for userId:", fixedBooking.userId);
-      await prisma.booking.create({ data: fixedBooking });
+      const existing = await prisma.booking.findUnique({
+        where: { id: fixedBooking.id },
+      });
+
+      if (!existing) {
+        console.log("Creating booking for userId:", fixedBooking.userId);
+        await prisma.booking.create({ data: fixedBooking });
+      } else {
+        console.log("Booking already exists, skipping:", fixedBooking.id);
+      }
     } catch (err) {
       console.error("Error creating booking:", err.message);
     }
   }
 
-  // Reviews
+  // Reviews – idem: alleen aanmaken als ID nog niet bestaat
   for (const review of reviews) {
     try {
-      // Controleer verplichte velden
       if (!review.userId || !review.propertyId || !review.rating) {
         throw new Error("Review missing required fields");
       }
 
-      console.log("Creating review by userId:", review.userId);
-      await prisma.review.create({ data: review });
+      const exists = await prisma.review.findUnique({
+        where: { id: review.id },
+      });
+
+      if (!exists) {
+        console.log("Creating review by userId:", review.userId);
+        await prisma.review.create({ data: review });
+      } else {
+        console.log("Review already exists, skipping:", review.id);
+      }
     } catch (err) {
       console.error("Error creating review:", err.message);
     }
