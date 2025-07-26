@@ -46,7 +46,7 @@ async function main() {
 
       console.log("Upserting user:", user.username);
       await prisma.user.upsert({
-        where: { email: user.email },
+        where: { username: user.username }, // gebruik username (uniek) ipv email
         update: {},
         create: user,
       });
