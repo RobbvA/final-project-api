@@ -54,8 +54,8 @@ model Property {
 
 model Booking {
   id             String    @id @default(uuid())
-  checkIn        DateTime
-  checkOut       DateTime
+  checkIn        DateTime?
+  checkOut       DateTime?
   numberOfGuests Int
   totalPrice     Float
   bookingStatus  String

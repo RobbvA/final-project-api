@@ -46,16 +46,11 @@ export async function createBooking(req, res) {
   } = req.body;
 
   try {
-    // Minimale verplichte velden
-    if (!checkIn || !checkOut || !userId || !propertyId) {
-      console.log("❌ Missing required fields:", {
-        checkIn,
-        checkOut,
-        userId,
-        propertyId,
-      });
+    // Verplichte velden: alleen userId en propertyId
+    if (!userId || !propertyId) {
+      console.log("❌ Missing required fields:", { userId, propertyId });
       return res.status(400).json({
-        error: "checkIn, checkOut, userId en propertyId zijn verplicht",
+        error: "userId en propertyId zijn verplicht",
       });
     }
 
@@ -86,16 +81,27 @@ export async function createBooking(req, res) {
       return res.status(400).json({ error: "Property bestaat niet" });
     }
 
-    // Datumvalidatie
-    const checkInDate = new Date(checkIn);
-    const checkOutDate = new Date(checkOut);
-    if (isNaN(checkInDate) || isNaN(checkOutDate)) {
-      console.log("❌ Ongeldige datum:", { checkIn, checkOut });
-      return res
-        .status(400)
-        .json({ error: "checkIn en checkOut moeten geldige datums zijn" });
+    // Datumvalidatie alleen als aanwezig
+    let checkInDate = null;
+    let checkOutDate = null;
+
+    if (checkIn) {
+      checkInDate = new Date(checkIn);
+      if (isNaN(checkInDate)) {
+        console.log("❌ Ongeldige checkIn datum:", checkIn);
+        return res.status(400).json({ error: "checkIn is geen geldige datum" });
+      }
     }
-    if (checkOutDate <= checkInDate) {
+    if (checkOut) {
+      checkOutDate = new Date(checkOut);
+      if (isNaN(checkOutDate)) {
+        console.log("❌ Ongeldige checkOut datum:", checkOut);
+        return res
+          .status(400)
+          .json({ error: "checkOut is geen geldige datum" });
+      }
+    }
+    if (checkInDate && checkOutDate && checkOutDate <= checkInDate) {
       console.log("❌ checkOut moet na checkIn liggen:", {
         checkInDate,
         checkOutDate,
