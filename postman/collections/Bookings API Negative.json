@@ -44,12 +44,12 @@
                   }
                 ],
                 "url": {
-                  "raw": "http://0.0.0.0:3000/users/:userId",
-                  "host": ["http://0.0.0.0:3000"],
+                  "raw": "{{baseUrl}}/users/:userId",
+                  "host": ["{{baseUrl}}"],
                   "path": ["users", ":userId"],
                   "variable": [
                     {
-                      "key": "userId",
+                      "key": "propertyId",
                       "value": "d4567890-12ef-0123-4567-89abcdef0123",
                       "description": "(Required) "
                     }
@@ -64,8 +64,8 @@
                     "method": "GET",
                     "header": [],
                     "url": {
-                      "raw": "http://0.0.0.0:3000/users/:userId",
-                      "host": ["http://0.0.0.0:3000"],
+                      "raw": "{{baseUrl}}/users/:userId",
+                      "host": ["{{baseUrl}}"],
                       "path": ["users", ":userId"],
                       "variable": [
                         {
@@ -116,7 +116,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{bearerToken}}",
+                    "value": "{{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -130,8 +130,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://0.0.0.0:3000/users/:userId",
-                  "host": ["http://0.0.0.0:3000"],
+                  "raw": "{{baseUrl}}/users/:userId",
+                  "host": ["{{baseUrl}}"],
                   "path": ["users", ":userId"],
                   "variable": [
                     {
@@ -151,7 +151,7 @@
                     "header": [
                       {
                         "key": "Authorization",
-                        "value": "Bearer {{bearerToken}}",
+                        "value": "{{bearerToken}}",
                         "type": "text"
                       }
                     ],
@@ -165,8 +165,8 @@
                       }
                     },
                     "url": {
-                      "raw": "http://0.0.0.0:3000/users/:userId",
-                      "host": ["http://0.0.0.0:3000"],
+                      "raw": "{{baseUrl}}/users/:userId",
+                      "host": ["{{baseUrl}}"],
                       "path": ["users", ":userId"],
                       "variable": [
                         {
@@ -217,13 +217,13 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{bearerToken}}",
+                    "value": "{{bearerToken}}",
                     "type": "text"
                   }
                 ],
                 "url": {
-                  "raw": "http://0.0.0.0:3000/users/:userId",
-                  "host": ["http://0.0.0.0:3000"],
+                  "raw": "{{baseUrl}}/users/:userId",
+                  "host": ["{{baseUrl}}"],
                   "path": ["users", ":userId"],
                   "variable": [
                     {
@@ -243,13 +243,13 @@
                     "header": [
                       {
                         "key": "Authorization",
-                        "value": "Bearer {{bearerToken}}",
+                        "value": "{{bearerToken}}",
                         "type": "text"
                       }
                     ],
                     "url": {
-                      "raw": "http://0.0.0.0:3000/users/:userId",
-                      "host": ["http://0.0.0.0:3000"],
+                      "raw": "{{baseUrl}}/users/:userId",
+                      "host": ["{{baseUrl}}"],
                       "path": ["users", ":userId"],
                       "variable": [
                         {
@@ -303,7 +303,7 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "Bearer {{bearerToken}}",
+                "value": "{{bearerToken}}",
                 "type": "text"
               }
             ],
@@ -317,8 +317,8 @@
               }
             },
             "url": {
-              "raw": "http://0.0.0.0:3000/users",
-              "host": ["http://0.0.0.0:3000"],
+              "raw": "{{baseUrl}}/users",
+              "host": ["{{baseUrl}}"],
               "path": ["users"]
             }
           },
@@ -331,7 +331,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{bearerToken}}",
+                    "value": "{{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -345,8 +345,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://0.0.0.0:3000/users",
-                  "host": ["http://0.0.0.0:3000"],
+                  "raw": "{{baseUrl}}/users",
+                  "host": ["{{baseUrl}}"],
                   "path": ["users"]
                 }
               },
@@ -403,8 +403,8 @@
                   }
                 ],
                 "url": {
-                  "raw": "http://0.0.0.0:3000/hosts/:hostId",
-                  "host": ["http://0.0.0.0:3000"],
+                  "raw": "{{baseUrl}}/hosts/:hostId",
+                  "host": ["{{baseUrl}}"],
                   "path": ["hosts", ":hostId"],
                   "variable": [
                     {
@@ -423,8 +423,8 @@
                     "method": "GET",
                     "header": [],
                     "url": {
-                      "raw": "http://0.0.0.0:3000/hosts/:hostId",
-                      "host": ["http://0.0.0.0:3000"],
+                      "raw": "{{baseUrl}}/hosts/:hostId",
+                      "host": ["{{baseUrl}}"],
                       "path": ["hosts", ":hostId"],
                       "variable": [
                         {
@@ -475,7 +475,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{bearerToken}}",
+                    "value": "{{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -489,8 +489,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://0.0.0.0:3000/hosts/:hostId",
-                  "host": ["http://0.0.0.0:3000"],
+                  "raw": "{{baseUrl}}/hosts/:hostId",
+                  "host": ["{{baseUrl}}"],
                   "path": ["hosts", ":hostId"],
                   "variable": [
                     {
@@ -510,7 +510,7 @@
                     "header": [
                       {
                         "key": "Authorization",
-                        "value": "Bearer {{bearerToken}}",
+                        "value": "{{bearerToken}}",
                         "type": "text"
                       }
                     ],
@@ -524,8 +524,8 @@
                       }
                     },
                     "url": {
-                      "raw": "http://0.0.0.0:3000/hosts/:hostId",
-                      "host": ["http://0.0.0.0:3000"],
+                      "raw": "{{baseUrl}}/hosts/:hostId",
+                      "host": ["{{baseUrl}}"],
                       "path": ["hosts", ":hostId"],
                       "variable": [
                         {
@@ -576,13 +576,13 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{bearerToken}}",
+                    "value": "{{bearerToken}}",
                     "type": "text"
                   }
                 ],
                 "url": {
-                  "raw": "http://0.0.0.0:3000/hosts/:hostId",
-                  "host": ["http://0.0.0.0:3000"],
+                  "raw": "{{baseUrl}}/hosts/:hostId",
+                  "host": ["{{baseUrl}}"],
                   "path": ["hosts", ":hostId"],
                   "variable": [
                     {
@@ -602,13 +602,13 @@
                     "header": [
                       {
                         "key": "Authorization",
-                        "value": "Bearer {{bearerToken}}",
+                        "value": "{{bearerToken}}",
                         "type": "text"
                       }
                     ],
                     "url": {
-                      "raw": "http://0.0.0.0:3000/hosts/:hostId",
-                      "host": ["http://0.0.0.0:3000"],
+                      "raw": "{{baseUrl}}/hosts/:hostId",
+                      "host": ["{{baseUrl}}"],
                       "path": ["hosts", ":hostId"],
                       "variable": [
                         {
@@ -662,7 +662,7 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "Bearer {{bearerToken}}",
+                "value": "{{bearerToken}}",
                 "type": "text"
               }
             ],
@@ -676,8 +676,8 @@
               }
             },
             "url": {
-              "raw": "http://0.0.0.0:3000/hosts",
-              "host": ["http://0.0.0.0:3000"],
+              "raw": "{{baseUrl}}/hosts",
+              "host": ["{{baseUrl}}"],
               "path": ["hosts"]
             }
           },
@@ -690,7 +690,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{bearerToken}}",
+                    "value": "{{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -704,8 +704,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://0.0.0.0:3000/hosts",
-                  "host": ["http://0.0.0.0:3000"],
+                  "raw": "{{baseUrl}}/hosts",
+                  "host": ["{{baseUrl}}"],
                   "path": ["hosts"]
                 }
               },
@@ -762,8 +762,8 @@
                   }
                 ],
                 "url": {
-                  "raw": "http://0.0.0.0:3000/properties/:propertyId",
-                  "host": ["http://0.0.0.0:3000"],
+                  "raw": "{{baseUrl}}/properties/:propertyId",
+                  "host": ["{{baseUrl}}"],
                   "path": ["properties", ":propertyId"],
                   "variable": [
                     {
@@ -782,8 +782,8 @@
                     "method": "GET",
                     "header": [],
                     "url": {
-                      "raw": "http://0.0.0.0:3000/properties/:propertyId",
-                      "host": ["http://0.0.0.0:3000"],
+                      "raw": "{{baseUrl}}/properties/:propertyId",
+                      "host": ["{{baseUrl}}"],
                       "path": ["properties", ":propertyId"],
                       "variable": [
                         {
@@ -834,7 +834,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{bearerToken}}",
+                    "value": "{{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -848,8 +848,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://0.0.0.0:3000/properties/:propertyId",
-                  "host": ["http://0.0.0.0:3000"],
+                  "raw": "{{baseUrl}}/properties/:propertyId",
+                  "host": ["{{baseUrl}}"],
                   "path": ["properties", ":propertyId"],
                   "variable": [
                     {
@@ -869,7 +869,7 @@
                     "header": [
                       {
                         "key": "Authorization",
-                        "value": "Bearer {{bearerToken}}",
+                        "value": "{{bearerToken}}",
                         "type": "text"
                       }
                     ],
@@ -883,8 +883,8 @@
                       }
                     },
                     "url": {
-                      "raw": "http://0.0.0.0:3000/properties/:propertyId",
-                      "host": ["http://0.0.0.0:3000"],
+                      "raw": "{{baseUrl}}/properties/:propertyId",
+                      "host": ["{{baseUrl}}"],
                       "path": ["properties", ":propertyId"],
                       "variable": [
                         {
@@ -935,13 +935,13 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{bearerToken}}",
+                    "value": "{{bearerToken}}",
                     "type": "text"
                   }
                 ],
                 "url": {
-                  "raw": "http://0.0.0.0:3000/properties/:propertyId",
-                  "host": ["http://0.0.0.0:3000"],
+                  "raw": "{{baseUrl}}/properties/:propertyId",
+                  "host": ["{{baseUrl}}"],
                   "path": ["properties", ":propertyId"],
                   "variable": [
                     {
@@ -961,13 +961,13 @@
                     "header": [
                       {
                         "key": "Authorization",
-                        "value": "Bearer {{bearerToken}}",
+                        "value": "{{bearerToken}}",
                         "type": "text"
                       }
                     ],
                     "url": {
-                      "raw": "http://0.0.0.0:3000/properties/:propertyId",
-                      "host": ["http://0.0.0.0:3000"],
+                      "raw": "{{baseUrl}}/properties/:propertyId",
+                      "host": ["{{baseUrl}}"],
                       "path": ["properties", ":propertyId"],
                       "variable": [
                         {
@@ -1021,7 +1021,7 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "Bearer {{bearerToken}}",
+                "value": "{{bearerToken}}",
                 "type": "text"
               }
             ],
@@ -1035,8 +1035,8 @@
               }
             },
             "url": {
-              "raw": "http://0.0.0.0:3000/properties",
-              "host": ["http://0.0.0.0:3000"],
+              "raw": "{{baseUrl}}/properties",
+              "host": ["{{baseUrl}}"],
               "path": ["properties"]
             }
           },
@@ -1049,7 +1049,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{bearerToken}}",
+                    "value": "{{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -1063,8 +1063,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://0.0.0.0:3000/properties",
-                  "host": ["http://0.0.0.0:3000"],
+                  "raw": "{{baseUrl}}/properties",
+                  "host": ["{{baseUrl}}"],
                   "path": ["properties"]
                 }
               },
@@ -1121,8 +1121,8 @@
                   }
                 ],
                 "url": {
-                  "raw": "http://0.0.0.0:3000/bookings/:bookingId",
-                  "host": ["http://0.0.0.0:3000"],
+                  "raw": "{{baseUrl}}/bookings/:bookingId",
+                  "host": ["{{baseUrl}}"],
                   "path": ["bookings", ":bookingId"],
                   "variable": [
                     {
@@ -1141,8 +1141,8 @@
                     "method": "GET",
                     "header": [],
                     "url": {
-                      "raw": "http://0.0.0.0:3000/bookings/:bookingId",
-                      "host": ["http://0.0.0.0:3000"],
+                      "raw": "{{baseUrl}}/bookings/:bookingId",
+                      "host": ["{{baseUrl}}"],
                       "path": ["bookings", ":bookingId"],
                       "variable": [
                         {
@@ -1193,7 +1193,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{bearerToken}}",
+                    "value": "{{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -1207,8 +1207,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://0.0.0.0:3000/bookings/:bookingId",
-                  "host": ["http://0.0.0.0:3000"],
+                  "raw": "{{baseUrl}}/bookings/:bookingId",
+                  "host": ["{{baseUrl}}"],
                   "path": ["bookings", ":bookingId"],
                   "variable": [
                     {
@@ -1228,7 +1228,7 @@
                     "header": [
                       {
                         "key": "Authorization",
-                        "value": "Bearer {{bearerToken}}",
+                        "value": "{{bearerToken}}",
                         "type": "text"
                       }
                     ],
@@ -1242,8 +1242,8 @@
                       }
                     },
                     "url": {
-                      "raw": "http://0.0.0.0:3000/bookings/:bookingId",
-                      "host": ["http://0.0.0.0:3000"],
+                      "raw": "{{baseUrl}}/bookings/:bookingId",
+                      "host": ["{{baseUrl}}"],
                       "path": ["bookings", ":bookingId"],
                       "variable": [
                         {
@@ -1294,13 +1294,13 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{bearerToken}}",
+                    "value": "{{bearerToken}}",
                     "type": "text"
                   }
                 ],
                 "url": {
-                  "raw": "http://0.0.0.0:3000/bookings/:bookingId",
-                  "host": ["http://0.0.0.0:3000"],
+                  "raw": "{{baseUrl}}/bookings/:bookingId",
+                  "host": ["{{baseUrl}}"],
                   "path": ["bookings", ":bookingId"],
                   "variable": [
                     {
@@ -1320,13 +1320,13 @@
                     "header": [
                       {
                         "key": "Authorization",
-                        "value": "Bearer {{bearerToken}}",
+                        "value": "{{bearerToken}}",
                         "type": "text"
                       }
                     ],
                     "url": {
-                      "raw": "http://0.0.0.0:3000/bookings/:bookingId",
-                      "host": ["http://0.0.0.0:3000"],
+                      "raw": "{{baseUrl}}/bookings/:bookingId",
+                      "host": ["{{baseUrl}}"],
                       "path": ["bookings", ":bookingId"],
                       "variable": [
                         {
@@ -1380,7 +1380,7 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "Bearer {{bearerToken}}",
+                "value": "{{bearerToken}}",
                 "type": "text"
               }
             ],
@@ -1394,8 +1394,8 @@
               }
             },
             "url": {
-              "raw": "http://0.0.0.0:3000/bookings",
-              "host": ["http://0.0.0.0:3000"],
+              "raw": "{{baseUrl}}/bookings",
+              "host": ["{{baseUrl}}"],
               "path": ["bookings"]
             }
           },
@@ -1408,7 +1408,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{bearerToken}}",
+                    "value": "{{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -1422,8 +1422,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://0.0.0.0:3000/bookings",
-                  "host": ["http://0.0.0.0:3000"],
+                  "raw": "{{baseUrl}}/bookings",
+                  "host": ["{{baseUrl}}"],
                   "path": ["bookings"]
                 }
               },
@@ -1480,8 +1480,8 @@
                   }
                 ],
                 "url": {
-                  "raw": "http://0.0.0.0:3000/reviews/:reviewId",
-                  "host": ["http://0.0.0.0:3000"],
+                  "raw": "{{baseUrl}}/reviews/:reviewId",
+                  "host": ["{{baseUrl}}"],
                   "path": ["reviews", ":reviewId"],
                   "variable": [
                     {
@@ -1500,8 +1500,8 @@
                     "method": "GET",
                     "header": [],
                     "url": {
-                      "raw": "http://0.0.0.0:3000/reviews/:reviewId",
-                      "host": ["http://0.0.0.0:3000"],
+                      "raw": "{{baseUrl}}/reviews/:reviewId",
+                      "host": ["{{baseUrl}}"],
                       "path": ["reviews", ":reviewId"],
                       "variable": [
                         {
@@ -1552,7 +1552,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{bearerToken}}",
+                    "value": "{{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -1566,8 +1566,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://0.0.0.0:3000/reviews/:reviewId",
-                  "host": ["http://0.0.0.0:3000"],
+                  "raw": "{{baseUrl}}/reviews/:reviewId",
+                  "host": ["{{baseUrl}}"],
                   "path": ["reviews", ":reviewId"],
                   "variable": [
                     {
@@ -1587,7 +1587,7 @@
                     "header": [
                       {
                         "key": "Authorization",
-                        "value": "Bearer {{bearerToken}}",
+                        "value": "{{bearerToken}}",
                         "type": "text"
                       }
                     ],
@@ -1601,8 +1601,8 @@
                       }
                     },
                     "url": {
-                      "raw": "http://0.0.0.0:3000/reviews/:reviewId",
-                      "host": ["http://0.0.0.0:3000"],
+                      "raw": "{{baseUrl}}/reviews/:reviewId",
+                      "host": ["{{baseUrl}}"],
                       "path": ["reviews", ":reviewId"],
                       "variable": [
                         {
@@ -1653,13 +1653,13 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{bearerToken}}",
+                    "value": "{{bearerToken}}",
                     "type": "text"
                   }
                 ],
                 "url": {
-                  "raw": "http://0.0.0.0:3000/reviews/:reviewId",
-                  "host": ["http://0.0.0.0:3000"],
+                  "raw": "{{baseUrl}}/reviews/:reviewId",
+                  "host": ["{{baseUrl}}"],
                   "path": ["reviews", ":reviewId"],
                   "variable": [
                     {
@@ -1679,13 +1679,13 @@
                     "header": [
                       {
                         "key": "Authorization",
-                        "value": "Bearer {{bearerToken}}",
+                        "value": "{{bearerToken}}",
                         "type": "text"
                       }
                     ],
                     "url": {
-                      "raw": "http://0.0.0.0:3000/reviews/:reviewId",
-                      "host": ["http://0.0.0.0:3000"],
+                      "raw": "{{baseUrl}}/reviews/:reviewId",
+                      "host": ["{{baseUrl}}"],
                       "path": ["reviews", ":reviewId"],
                       "variable": [
                         {
@@ -1739,7 +1739,7 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "Bearer {{bearerToken}}",
+                "value": "{{bearerToken}}",
                 "type": "text"
               }
             ],
@@ -1753,8 +1753,8 @@
               }
             },
             "url": {
-              "raw": "http://0.0.0.0:3000/reviews",
-              "host": ["http://0.0.0.0:3000"],
+              "raw": "{{baseUrl}}/reviews",
+              "host": ["{{baseUrl}}"],
               "path": ["reviews"]
             }
           },
@@ -1767,7 +1767,7 @@
                 "header": [
                   {
                     "key": "Authorization",
-                    "value": "Bearer {{bearerToken}}",
+                    "value": "{{bearerToken}}",
                     "type": "text"
                   }
                 ],
@@ -1781,8 +1781,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://0.0.0.0:3000/reviews",
-                  "host": ["http://0.0.0.0:3000"],
+                  "raw": "{{baseUrl}}/reviews",
+                  "host": ["{{baseUrl}}"],
                   "path": ["reviews"]
                 }
               },
@@ -1846,11 +1846,9 @@
           }
         },
         "url": {
-          "raw": "http://0.0.0.0:3000/api/auth/login",
-          "protocol": "http",
-          "host": ["0.0.0.0"],
-          "port": "3000",
-          "path": ["api", "auth", "login"]
+          "raw": "{{baseUrl}}/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["login"]
         }
       },
       "response": [
@@ -1870,10 +1868,8 @@
               }
             },
             "url": {
-              "raw": "http://0.0.0.0:3000/login",
-              "protocol": "http",
-              "host": ["0.0.0.0"],
-              "port": "3000",
+              "raw": "{{baseUrl}}/login",
+              "host": ["{{baseUrl}}"],
               "path": ["login"]
             }
           },

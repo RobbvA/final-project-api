@@ -77,6 +77,12 @@ export async function updateReview(req, res) {
   }
 
   try {
+    // Eerst checken of review bestaat
+    const existing = await prisma.review.findUnique({ where: { id } });
+    if (!existing) {
+      return res.status(404).json({ error: "Review not found" });
+    }
+
     const updatedReview = await prisma.review.update({
       where: { id },
       data: updateData,
@@ -92,6 +98,12 @@ export async function updateReview(req, res) {
 export async function deleteReview(req, res) {
   const id = req.params.id;
   try {
+    // Eerst checken of review bestaat
+    const existing = await prisma.review.findUnique({ where: { id } });
+    if (!existing) {
+      return res.status(404).json({ error: "Review not found" });
+    }
+
     await prisma.review.delete({ where: { id } });
     res.json({ message: "Review deleted" });
   } catch (error) {

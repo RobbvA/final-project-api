@@ -138,6 +138,16 @@ export async function updateBooking(req, res) {
   const updateData = { ...req.body };
 
   try {
+    // Eerst checken of de booking bestaat
+    const existingBooking = await prisma.booking.findUnique({
+      where: { id },
+    });
+
+    if (!existingBooking) {
+      return res.status(404).json({ error: "Booking not found" });
+    }
+
+    // Datum velden fixen
     if (updateData.checkinDate) {
       updateData.checkIn = new Date(updateData.checkinDate);
       delete updateData.checkinDate;
@@ -146,11 +156,11 @@ export async function updateBooking(req, res) {
       updateData.checkOut = new Date(updateData.checkoutDate);
       delete updateData.checkoutDate;
     }
-
     if (updateData.checkIn) updateData.checkIn = new Date(updateData.checkIn);
     if (updateData.checkOut)
       updateData.checkOut = new Date(updateData.checkOut);
 
+    // Pas update toe
     const updated = await prisma.booking.update({
       where: { id },
       data: updateData,
@@ -163,11 +173,16 @@ export async function updateBooking(req, res) {
   }
 }
 
-// DELETE /bookings/:id
 export async function deleteBooking(req, res) {
   const id = req.params.id;
 
   try {
+    // Check of de booking bestaat
+    const existingBooking = await prisma.booking.findUnique({ where: { id } });
+    if (!existingBooking) {
+      return res.status(404).json({ error: "Booking not found" });
+    }
+
     await prisma.booking.delete({ where: { id } });
     res.json({ message: "Booking deleted" });
   } catch (error) {

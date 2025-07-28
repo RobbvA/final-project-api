@@ -1,3 +1,4 @@
+//propertyService.js
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
@@ -133,6 +134,7 @@ export async function createProperty(req, res) {
 }
 
 // PUT /api/properties/:id
+// PUT /api/properties/:id
 export async function updateProperty(req, res) {
   const id = req.params.id;
 
@@ -185,6 +187,12 @@ export async function updateProperty(req, res) {
   }
 
   try {
+    // Eerst checken of property bestaat
+    const existing = await prisma.property.findUnique({ where: { id } });
+    if (!existing) {
+      return res.status(404).json({ error: "Property not found" });
+    }
+
     const updated = await prisma.property.update({
       where: { id },
       data: {
@@ -211,9 +219,19 @@ export async function updateProperty(req, res) {
 // DELETE /api/properties/:id
 export async function deleteProperty(req, res) {
   const id = req.params.id;
+
   try {
+    // Check of property bestaat
+    const existing = await prisma.property.findUnique({ where: { id } });
+    if (!existing) {
+      return res.status(404).json({ error: "Property not found" });
+    }
+
+    // Eerst gerelateerde bookings en reviews verwijderen
     await prisma.booking.deleteMany({ where: { propertyId: id } });
     await prisma.review.deleteMany({ where: { propertyId: id } });
+
+    // Dan property zelf verwijderen
     await prisma.property.delete({ where: { id } });
 
     res.json({ message: "Property deleted" });

@@ -4,6 +4,6 @@ import { loginUser } from "../services/authService.js";
 
 const router = express.Router();
 
-router.post("/login", asyncHandler(loginUser));
+router.post("/", asyncHandler(loginUser));
 
 export default router;

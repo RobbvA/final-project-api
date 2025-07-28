@@ -24,7 +24,7 @@ Sentry.init({
 
 const app = express();
 
-// ✨ Sentry request handler: moet zo vroeg mogelijk in de middleware stack staan
+// Sentry request handler
 app.use(Sentry.Handlers.requestHandler());
 
 // Middleware om JSON te parsen
@@ -41,23 +41,23 @@ app.get("/debug-sentry", (req, res) => {
   throw new Error("My first Sentry error!");
 });
 
-// API routes (zonder auth middleware)
-app.use("/api/auth", authRoutes);
-app.use("/api/users", userRoutes);
-app.use("/api/hosts", hostRoutes);
-app.use("/api/properties", propertyRoutes);
-app.use("/api/bookings", bookingRoutes);
-app.use("/api/reviews", reviewRoutes);
+// API routes
+app.use("/login", authRoutes);
+app.use("/users", userRoutes);
+app.use("/hosts", hostRoutes);
+app.use("/properties", propertyRoutes);
+app.use("/bookings", bookingRoutes);
+app.use("/reviews", reviewRoutes);
 
-// Test endpoint (normale route)
+// Test endpoint
 app.get("/", (req, res) => {
   res.send("Hello world!");
 });
 
-// ✨ Sentry error handler, vóór eigen error handler
+// Sentry eigen error handler
 app.use(Sentry.Handlers.errorHandler());
 
-// Eigen error handler middleware, als laatste in de middleware stack
+// Eigen error handler middleware
 app.use(errorHandler);
 
 // Start de server
